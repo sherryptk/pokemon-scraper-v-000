@@ -8,8 +8,9 @@ class Pokemon
     @name = name
     @type = type
     @db = db
-    @@all << self
     binding.pry
+
+    @@all << self
   end
 
   def save
