@@ -21,7 +21,7 @@ class Pokemon
     found = db.execute("SELECT * FROM Pokemon WHERE Pokemon.id = ?",[poke_id])
     binding.pry
 
-    new = Pokemon.new(found.split(/[\s,]+/), db)
+    new = Pokemon.new(found[0][0], found[0][1], found[0][2], db)
     new
   end
 end
