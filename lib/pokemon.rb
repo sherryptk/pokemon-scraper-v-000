@@ -1,17 +1,21 @@
 require 'pry'
 
 class Pokemon
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :db, :hp
 
   @@all = []
 
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, db: nil)
     @id = id
     @name = name
     @type = type
     @db = db
     @@all << self
   end
+  # The find method should create a new Pokemon object with an id, type,
+  # name AND hp after selecting their row from the database by their id number.
+  # remember to also update the initialize method to accept an argument of hp
+  # that defaults to nil if not set (so it still passes the non-bonus tests)
 
   def self.save(name, type, db)
     db.execute("INSERT INTO Pokemon (name, type) VALUES (?, ?)", [name, type])
