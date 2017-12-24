@@ -9,6 +9,7 @@ class Pokemon
     @type = type
     @db = db
     @@all << self
+    binding.pry
   end
 
   def save
